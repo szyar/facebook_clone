@@ -11,7 +11,8 @@
     <% @posts.each do |post| %>
       <tr>
         <td><%= post.content %></td>
-        <td>Actions</td>
+        <td><%= link_to 'View Post', post_path(post) %></td>
+        <td><%= link_to 'Delete', post_path(post), method: :delete %></td>
       </tr>
     <% end %>
   </tbody>
