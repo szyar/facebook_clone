@@ -1,0 +1,29 @@
+@import "bootstrap";
+
+.login-navbar {
+  background-color: #3B5A98 !important;
+}
+
+.login-nav {
+  margin-top: 0;
+  padding-left: 12.5%;
+  padding-top: 0.8%;
+  height: 4.2rem;
+  font-family: 'Roboto Mono', monospace;
+  font-weight: bold;
+  font-size: 2.5rem;
+  letter-spacing: -2.7px;
+}
+
+.login-wrapper {
+  margin-left: 13.5%;
+  margin-top: 3%;
+}
+
+.login-slogan {
+  font-family: 'Roboto Mono', sans-serif;
+  color: #0E385F;
+  font-weight: bold;
+  font-size: 1.21rem;
+  margin-bottom: 0px;
+}
