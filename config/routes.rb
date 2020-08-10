@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
-  root "pages#home"
+  root "pages#login"
+  get '/home', to: 'pages#home'
   resources :posts
 end
