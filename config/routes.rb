@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
-  root "posts#login"
+  root "pages#login"
   resources :posts
 end
