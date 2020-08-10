@@ -1,0 +1,19 @@
+<h1>Create post</h1>
+
+<% if @post.errors.any? %>
+  <h2>The following errors prevented the post from being saved.</h2>
+  <ul>
+    <% @post.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= form_with(model: @post, local: true) do |form| %>
+  <p class="post_content">
+    <%= form.text_area :content %>
+  </p>
+  <p>
+    <%= form.submit "Post" %>
+  </p>
+<% end %>
