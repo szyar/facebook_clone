@@ -2,21 +2,25 @@
 
 .login-navbar {
   background-color: #3B5A98 !important;
+  height: 83px;
 }
 
 .login-nav {
   margin-top: 0;
-  padding-left: 12.5%;
-  padding-top: 0.8%;
-  height: 4.2rem;
+  padding-left: 23.5%;
+  padding-top: 0.6%;
   font-family: 'Roboto Mono', monospace;
   font-weight: bold;
   font-size: 2.5rem;
   letter-spacing: -2.7px;
 }
 
+.login-nav:hover {
+  text-decoration: none;
+}
+
 .login-wrapper {
-  margin-left: 13.5%;
+  margin-left: 24%;
   margin-top: 3%;
 }
 
