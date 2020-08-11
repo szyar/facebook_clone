@@ -31,6 +31,14 @@ body {
   height: auto !important;
 }
 
+.my-color {
+  background-color: lighten(#365899, 7) !important;
+}
+
+.my-color:hover {
+  background-color: darken(#365899, 3) !important;
+}
+
 footer {
   width: 100%;
   height: 3rem;

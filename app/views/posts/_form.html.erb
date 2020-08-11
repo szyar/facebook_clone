@@ -7,11 +7,25 @@
   </ul>
 <% end %>
 
-<%= form_with(model: @post, local: true) do |f| %>
-  <p class="post_content">
-    <%= f.text_area :content %>
-  </p>
-  <p>
-    <%= f.submit %>
-  </p>
-<% end %>
+<div class="container">
+  <%= form_with(model: @post, local: true) do |f| %>
+    <div class="row justify-content-md-center">
+      <div class="col-7 mt-3">
+        <div class="card text-center">
+          <div class="card-header bg-grey text-left text-primary font-weight-bold">
+            <p>Title</p>
+          </div>
+          <div class="card-body" style="height: 25rem;">
+            <p class="card-text text-center"><%= f.text_area :content, rows: "14",
+            autofocus: true, class: "form-control" %></p>
+          </div>
+          <div class="card-footer">
+            <p>
+              <%= f.submit class: "btn my-color text-white btn-lg btn-block" %>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
