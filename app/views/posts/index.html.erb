@@ -1,22 +1,28 @@
 <%= render 'nav' %>
 
-<h1>Home Page</h1>
+<h1 class="text-center mt-4 mb-4">Home Page</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Content</th>
-      <th colspan="3">Actions</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @posts.each do |post| %>
-      <tr>
-        <td><%= post.content %></td>
-        <td><%= link_to 'View', post_path(post) %></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Delete', post_path(post), method: :delete, data: { confirm: "Are you sure?" } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class="container">
+  <% @posts.each do |post| %>
+    <div class="row justify-content-md-center">
+      <div class="col-7 mt-3">
+        <div class="card text-center">
+          <div class="card-header bg-white text-left text-primary font-weight-bold">
+            <a href="#">Soe Zayar</a>
+          </div>
+          <div class="card-body">
+            <p class="card-text text-left"><%= truncate(post.content, length: 500) %></p>
+            <%= link_to 'View', post_path(post), class: "btn btn-outline-info" %>
+            <%= link_to 'Edit', edit_post_path(post), class: "btn btn-outline-primary" %>
+            <%= link_to 'Delete', post_path(post), method: :delete, data: { confirm: "Are you sure?" },
+            class: "btn btn-outline-danger" %>
+          </div>
+          <div class="card-footer text-muted bg-white">
+            <small>Created <%= time_ago_in_words(post.created_at) %> ago,
+            edited <%= time_ago_in_words(post.updated_at) %> ago</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
