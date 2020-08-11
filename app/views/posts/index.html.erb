@@ -1,5 +1,4 @@
 <%= render 'nav' %>
-
 <h1 class="text-center mt-4 mb-4">Home Page</h1>
 
 <div class="container">
@@ -11,6 +10,7 @@
             <a href="#">Soe Zayar</a>
           </div>
           <div class="card-body">
+            <p class="card-text text-left"><%= post.id %></p>
             <p class="card-text text-left"><%= truncate(post.content, length: 500) %></p>
             <%= link_to 'View', post_path(post), class: "btn btn-outline-info" %>
             <%= link_to 'Edit', edit_post_path(post), class: "btn btn-outline-primary" %>
