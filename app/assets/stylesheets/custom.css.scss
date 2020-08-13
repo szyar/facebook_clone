@@ -6,20 +6,27 @@ body {
 
 .navbar {
   margin-top: 0;
-  background-color: #3B5A98 !important;
-  height: 2.7rem;
-  font-weight: bold;
+  background-color: #FFFFFF !important;
+  height: 3.7rem;
   font-size: 0.9rem;
   justify-content: space-between !important;
 }
 
-
-.navbar-brand {
+.my-text-brand {
+  color: #3B5A98;
   padding-left: 2rem;
+  font-size: 2rem !important;
+}
+
+.my-text {
+  font-size: 1.25rem !important;
+  color: #3B5A98;
+  margin: 1.5rem;
 }
 
 .nav-link:hover {
-  background-color: #3C5D9F;
+  border-radius: 1rem;
+  background-color: #F2F2F2;
 }
 
 .container {
@@ -45,7 +52,7 @@ footer {
   height: 3rem;
   bottom: 0 !important;
   position: fixed;
-  background-color: #3B5A98;
+  background-color: #FFFFFF;
   display: flex !important;
   align-items: center;
   justify-content: center;
@@ -53,5 +60,5 @@ footer {
 
 footer p {
   margin-bottom: 0;
-  font-weight: bold;
+  color: #3B5A98;
 }
