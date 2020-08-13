@@ -4,8 +4,8 @@
       <div class="col-8 mt-3">
         <%= render 'shared/errors', obj: @post %>
         <div class="card text-center">
-          <div class="card-header bg-grey text-left text-primary font-weight-bold">
-            <p>Post</p>
+          <div class="card-header bg-grey text-center font-weight-bold my-font-size">
+            <p><%= post %></p>
           </div>
           <div class="card-body" style="height: 25rem;">
             <p class="card-text text-center"><%= f.text_area :content, rows: "14",
@@ -13,7 +13,7 @@
           </div>
           <div class="card-footer">
             <p>
-              <%= f.submit class: "btn my-color text-white btn-lg btn-block" %>
+              <%= f.submit "#{name}", class: "btn my-color text-white btn-lg btn-block" %>
             </p>
           </div>
         </div>

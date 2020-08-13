@@ -11,7 +11,7 @@
             <p class="text-muted">It's quick and easy.</p>
           </div>
           <div class="card-body", style="height: 250px;">
-            <p class="card-text text-center mt-4"><%= f.text_field :username,
+            <p class="card-text text-center mt-4"><%= f.text_field :username, autofocus: true,
             class: "form-control shadow-sm", placeholder: "Username" %></p>
             <p class="card-text text-center mt-4"><%= f.email_field :email,
             class: "form-control shadow-sm", placeholder: "Email address" %></p>
