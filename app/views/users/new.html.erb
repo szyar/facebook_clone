@@ -1,0 +1,30 @@
+<%= render 'shared/nav' %>
+
+<div class="container">
+  <%= form_with(model: @user, local: true) do |f| %>
+    <div class="row justify-content-md-center">
+      <div class="col-6 mt-5">
+        <%= render 'shared/errors', obj: @user %>
+        <div class="card shadow text-center">
+          <div class="card-header bg-grey text-left">
+            <h1 class=" font-weight-bold">Sign Up</h1>
+            <p class="text-muted">It's quick and easy.</p>
+          </div>
+          <div class="card-body", style="height: 250px;">
+            <p class="card-text text-center mt-4"><%= f.text_field :username,
+            class: "form-control shadow-sm", placeholder: "Username" %></p>
+            <p class="card-text text-center mt-4"><%= f.email_field :email,
+            class: "form-control shadow-sm", placeholder: "Email address" %></p>
+            <p class="card-text text-center"><%= f.password_field :password,
+            class: "form-control shadow-sm mt-4", placeholder: "New password" %></p>
+          </div>
+          <div class="card-footer">
+            <p>
+              <%= f.submit "Sign Up", class: "btn btn-success text-white btn-lg btn-block" %>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
