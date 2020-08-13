@@ -1,10 +1,43 @@
-<div class="container">
-  <div class="brand text-xl text-weight-bold">
-    <h1>facebook</h1>
+<div class="login container">
+  <div class="row">
+    <div class="col-6">
+      <div class="container">
+        <div class="brand">
+          <p class="brand-text">facebook</p>
+        </div>
+
+        <div class="login-wrapper">
+          <p class="login-slogan">Facebook helps you connect and share
+          with the people in your life.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-6">
+      <div class="container">
+        <%= form_with(model: @user, local: true) do |f| %>
+          <div class="row justify-content-md-center">
+            <div class="col-10">
+              <div class="card shadow text-center">
+                <div class="card-body", style="height: 250px;">
+                  <p class="card-text text-center"><%= f.email_field :email, autofocus: true,
+                  class: "form-control shadow-sm py-4 mt-2", placeholder: "Email address" %></p>
+                  <p class="card-text text-center"><%= f.password_field :password,
+                  class: "form-control shadow-sm py-4 mb-4", placeholder: "Password" %></p>
+                  <p>
+                    <%= f.submit "Log In", class: "btn btn-primary text-white btn-lg btn-block font-weight-bold" %>
+                  </p>
+                </div>
+                <div class="card-footer">
+                  <p>
+                    <%= f.submit "Create New Account", class: "btn btn-success text-white btn-lg btn-block login-text" %>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
   </div>
 
-  <div class="login-wrapper">
-    <pre class="login-slogan">Facebook helps you connect and share
-with the people in your life.</pre>
-  </div>
 </div>
