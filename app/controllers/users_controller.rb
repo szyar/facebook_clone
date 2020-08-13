@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   def page_title
-    "Facebook - log in or sign up"
+    "Facebook"
   end
 
   def index

@@ -1,0 +1,24 @@
+<%= render 'shared/nav' %>
+<h1 class="text-center mt-3 mb-2">Facebook Users</h1>
+<div class="container">
+  <% @users.each do |user| %>
+    <div class="row justify-content-md-center">
+      <div class="col-8 mt-3">
+        <div class="card text-center shadow-sm p-3">
+          <div class="card-header bg-white text-center text-primary font-weight-bold">
+            <%= link_to user.username, user %>
+          </div>
+          <div class="card-body">
+            <p class="card-text"><%= gravatar_for(user, size: 150) %></p>
+            <p class="card-text text-center"><%= pluralize(user.posts.count, "post") %></p>
+            <%= link_to 'View Profile', user, class: "btn btn-outline-info px-4" %>
+            <%= link_to 'Edit Profile', edit_user_path(user), class: "btn btn-outline-primary px-4" %>
+          </div>
+          <div class="card-footer text-muted bg-white">
+            <small>Joined <%= time_ago_in_words(user.created_at) %> ago</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
