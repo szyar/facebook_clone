@@ -1,17 +1,17 @@
 @import "bootstrap";
 
 body {
-  background-color: #F0F2F5 !important;
+  background-color: #f0f2f5 !important;
 }
 
 .login {
-  margin-top: 12.5rem;
-  margin-left: 25rem;
+  margin-top: 145px;
+  margin-left: 200px;
 }
 
 .brand-text {
-  color: #3077F2;
-  font-family: 'Helvetica', Arial, sans-serif;
+  color: #3077f2;
+  font-family: "Helvetica", Arial, sans-serif;
   font-weight: bolder;
   font-size: 3.4rem !important;
   margin-bottom: 0 !important;
@@ -19,7 +19,7 @@ body {
 }
 
 .login-slogan {
-  font-family: 'Helvetica', sans-serif;
+  font-family: "Helvetica", sans-serif;
   color: #000;
   font-size: 1.8rem;
 }
@@ -30,27 +30,27 @@ body {
 
 .navbar {
   margin-top: 0;
-  background-color: #FFFFFF !important;
+  background-color: #ffffff !important;
   height: 3.7rem;
   font-size: 0.9rem;
   justify-content: space-between !important;
 }
 
 .my-text-brand {
-  color: #3B5A98;
+  color: #3b5a98;
   padding-left: 2rem;
   font-size: 2rem !important;
 }
 
 .my-text {
   font-size: 1.25rem !important;
-  color: #3B5A98;
+  color: #3b5a98;
   margin: 1.5rem;
 }
 
 .nav-link:hover {
   border-radius: 1rem;
-  background-color: #F2F2F2;
+  background-color: #f2f2f2;
 }
 
 .container {
@@ -77,10 +77,10 @@ body {
 
 footer {
   width: 100%;
-  height: 5rem;
+  height: 52px;
   bottom: 0 !important;
   position: fixed;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   display: flex !important;
   align-items: center;
   justify-content: center;
@@ -88,5 +88,5 @@ footer {
 
 footer p {
   margin-bottom: 0;
-  color: #3B5A98;
+  color: #3b5a98;
 }
