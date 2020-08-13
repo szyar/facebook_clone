@@ -1,29 +1,4 @@
 <%= render 'shared/nav' %>
 <%= render 'shared/messages' %>
 <h1 class="text-center mt-3 mb-2">Home Page</h1>
-
-<div class="container">
-  <% @posts.each do |post| %>
-    <div class="row justify-content-md-center">
-      <div class="col-8 mt-3">
-        <div class="card text-center shadow-sm p-3">
-          <div class="card-header bg-white text-left text-primary font-weight-bold">
-            <%= post.user.username %>
-          </div>
-          <div class="card-body">
-            <p class="card-text text-left"><%= post.id %></p>
-            <p class="card-text text-left"><%= truncate(post.content, length: 500) %></p>
-            <%= link_to 'View', post_path(post), class: "btn btn-outline-info px-4" %>
-            <%= link_to 'Edit', edit_post_path(post), class: "btn btn-outline-primary px-4" %>
-            <%= link_to 'Delete', post_path(post), method: :delete, data: { confirm: "Are you sure?" },
-            class: "btn btn-outline-danger px-4" %>
-          </div>
-          <div class="card-footer text-muted bg-white">
-            <small>Created <%= time_ago_in_words(post.created_at) %> ago,
-            edited <%= time_ago_in_words(post.updated_at) %> ago</small>
-          </div>
-        </div>
-      </div>
-    </div>
-  <% end %>
-</div>
+<%= render 'post' %>
