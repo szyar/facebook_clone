@@ -4,6 +4,25 @@ body {
   background-color: #E9EBEE !important;
 }
 
+.brand {
+  color: #3077F2;
+  font-family: 'Helvetica', Arial, sans-serif;;
+  font-size: 3rem !important;
+  letter-spacing: -2.7px;
+}
+
+.login-nav:hover {
+  text-decoration: none;
+}
+
+.login-slogan {
+  font-family: 'Helvetica', sans-serif;
+  color: #000;
+  font-weight: bold;
+  font-size: 1.21rem;
+  margin-bottom: 0px;
+}
+
 .navbar {
   margin-top: 0;
   background-color: #FFFFFF !important;
