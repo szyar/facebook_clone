@@ -1,6 +1,7 @@
 <div class="login container">
   <div class="row">
     <div class="col">
+      <%= render 'shared/messages' %>
       <div class="container">
         <div class="brand">
           <p class="brand-text">facebook</p>
@@ -14,7 +15,7 @@
     </div>
     <div class="col">
       <div class="container">
-        <%= form_with(model: @user, local: true) do |f| %>
+        <%= form_with(scope: :session, url: login_path, local: true) do |f| %>
           <div class="row justify-content-md-center">
             <div class="col-10">
               <div class="card shadow text-center">
