@@ -1,5 +1,7 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :require_user
+  before_action :require_same_user, only: [:edit, :update, :destroy]
 
   def page_title
     "Facebook"
@@ -55,4 +57,12 @@ class PostsController < ApplicationController
   def post_params
     params.require(:post).permit(:content)
   end
+
+  def require_same_user
+    if current_user != @post.user
+      flash[:alert] = "You can only edit or delete your own posts"
+      redirect_to @post
+    end
+  end
+
 end
