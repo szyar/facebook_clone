@@ -1,19 +1,20 @@
 <div class="container">
-  <%= form_with(model: @post, local: true, url: confirm_posts_path) do |f| %>
+  <%= form_with(model: @post, local: true) do |f| %>
     <div class="row justify-content-md-center">
       <div class="col-8 mt-3">
         <%= render 'shared/errors', obj: @post %>
         <div class="card text-center">
           <div class="card-header bg-grey text-center font-weight-bold my-font-size">
-            <p><%= post %></p>
+            <p>Send with the following contents</p>
           </div>
           <div class="card-body" style="height: 25rem;">
-            <p class="card-text text-center"><%= f.text_area :content, rows: "14",
-            autofocus: true, class: "form-control", placeholder: "What's on your mind?" %></p>
+            <%= f.hidden_field :content %>
+            <p class="card-text text-left"><%= @post.content %></p>
           </div>
           <div class="card-footer">
             <p>
-              <%= f.submit "#{name}", class: "btn my-color text-white btn-lg btn-block" %>
+              <%= f.submit "Register", class: "btn btn-outline-primary px-4" %>
+              <%= f.submit "Back", name:'back', class: "btn btn-outline-primary px-4" %>
             </p>
           </div>
         </div>

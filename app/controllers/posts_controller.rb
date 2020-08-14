@@ -23,12 +23,16 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
-    @post.user =  current_user
-    if @post.save
-      flash[:notice] = "Post Created"
-      redirect_to @post
+    @post.user = current_user
+    if params[:back]
+      render :new
     else
-      render 'new'
+      if @post.save
+        flash[:notice] = "Post Created"
+        redirect_to @post
+      else
+        render 'new'
+      end
     end
   end
 
@@ -46,6 +50,12 @@ class PostsController < ApplicationController
       flash[:notice] = "Deleted Successfully"
       redirect_to posts_path
     end
+  end
+
+  def confirm
+    @post = Post.new(post_params)
+    @post.user = current_user
+    render 'new' if @post.invalid?
   end
 
   private

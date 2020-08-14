@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
   root "sessions#new"
-  resources :posts
+
+  resources :posts do
+    collection do
+      post :confirm
+    end
+  end
+
   get 'signup', to: 'users#new'
   resources :users, except: [:new]
 
