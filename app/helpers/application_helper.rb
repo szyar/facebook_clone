@@ -8,8 +8,4 @@ module ApplicationHelper
     image_tag(gravatar_url, alt: user.username, class: "rounded shadow mt-4 mx-auto d-block")
   end
 
-  def logged_in?
-    !!current_user
-  end
-
 end
