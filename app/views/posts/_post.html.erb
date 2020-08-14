@@ -7,7 +7,6 @@
             <h5><%= link_to post.user.username, user_path(post.user) %></h5>
           </div>
           <div class="card-body">
-            <p class="card-text text-left"><%= post.id %></p>
             <p class="card-text text-left"><%= truncate(post.content, length: 500) %></p>
             <%= link_to 'View', post_path(post), class: "btn btn-outline-info px-4" %>
             <% if logged_in? && post.user == current_user %>
