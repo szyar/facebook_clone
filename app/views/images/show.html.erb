@@ -1,21 +1,29 @@
-<p id="notice"><%= notice %></p>
+<%= render 'shared/nav' %>
+<%= render 'shared/messages' %>
 
-<p>
-  <strong>Name:</strong>
-  <%= @image.name %>
-</p>
-
-<p>
-  <strong>Picture:</strong>
-  <%= image_tag(@image.picture.url, size: "300") %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @image.user.username %>
-</p>
-
-<% if logged_in? && @image.user == current_user %>
-<%= link_to 'Edit', edit_image_path(@image) %> |
-<%= link_to 'Back', images_path %>
-<% end %>
+<div class="container">
+    <div class="row justify-content-md-center">
+      <div class="col-8 mt-3">
+        <h1 class="text-center mt-0 mb-4">Post Details</h1>
+        <div class="card text-center">
+          <div class="card-header bg-white text-center text-primary font-weight-bold">
+            <h4><%= link_to @image.user.username, user_path(@image.user) %></h4>
+            <%= link_to gravatar_for(@image.user), user_path(@image.user) %>
+          </div>
+          <div class="card-body">
+            <div class="card-text text-center">Caption: <%= @image.name %></div>
+            <div class="m-4"><%= image_tag(@image.picture.url, size: "300") %></div>
+            <% if logged_in? && @image.user == current_user %>
+              <%= link_to 'Edit', edit_image_path(@image), class: "btn btn-outline-primary px-4" %>
+              <%= link_to 'Delete', image_path(@image), method: :delete, data: { confirm: "Are you sure?" },
+              class: "btn btn-outline-danger px-4" %>
+            <% end %>
+          </div>
+          <div class="card-footer text-muted bg-white">
+            <small>Created <%= time_ago_in_words(@image.created_at) %> ago,
+            edited <%= time_ago_in_words(@image.updated_at) %> ago</small>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
