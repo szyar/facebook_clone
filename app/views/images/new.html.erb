@@ -1,5 +1,2 @@
-<h1>New Image</h1>
-
-<%= render 'form', image: @image %>
-
-<%= link_to 'Back', images_path %>
+<%= render 'shared/nav' %>
+<%= render 'form', image: @image, name: "Upload" %>

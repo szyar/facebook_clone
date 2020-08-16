@@ -1,27 +1,33 @@
-<%= form_with(model: image, local: true) do |form| %>
-  <% if image.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(image.errors.count, "error") %> prohibited this image from being saved:</h2>
+<div class="container">
+  <%= form_with(model: image, local: true) do |f| %>
+    <div class="row justify-content-md-center">
+      <div class="col-8 mt-3">
+        <%= render 'shared/errors', obj: @image %>
+        <div class="card text-center">
+          <div class="card-header bg-grey text-center font-weight-bold my-font-size">
+            <p> New Image </p>
+          </div>
 
-      <ul>
-      <% image.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+          <div class="card-body" style="height: 15rem;">
+
+            <p class="card-text text-center">
+              <%= f.text_field :name, autofocus: true,
+              class: "form-control", placeholder: "Name of the image" %>
+            </p>
+
+            <p class="card-text text-left">
+              <%= f.file_field :picture %>
+            </p>
+
+          </div>
+
+          <div class="card-footer">
+            <p>
+              <%= f.submit "#{name}", class: "btn my-color text-white btn-lg btn-block" %>
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :picture %>
-    <%= form.file_field :picture %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>
