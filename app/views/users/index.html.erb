@@ -12,7 +12,7 @@
           </div>
           <div class="card-body">
             <p class="card-text"><%= gravatar_for(user, size: 150) %></p>
-            <p class="card-text text-center"><%= pluralize(user.posts.count, "post") %></p>
+            <p class="card-text text-center"><%= pluralize(user.posts.count + user.images.count, "post") %></p>
             <%= link_to 'View Profile', user, class: "btn btn-outline-info px-4" %>
             <% if logged_in? && user == current_user %>
               <%= link_to 'Edit Profile', edit_user_path(user),

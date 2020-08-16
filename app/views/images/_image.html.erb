@@ -8,7 +8,7 @@
           </div>
           <div class="card-body">
             <p class="card-text text-left">Caption: <%= image.name %></p>
-            <p class="card-text text-center"><%= image_tag(image.picture.url, size: "300") %></p>
+            <p class="card-text text-center"><%= image_tag(image.picture.url, size: "300") if image.picture? %></p>
             <%= link_to 'View', image_path(image), class: "btn btn-outline-info px-4" %>
             <% if logged_in? && image.user == current_user %>
               <%= link_to 'Edit', edit_image_path(image), class: "btn btn-outline-primary px-4" %>
