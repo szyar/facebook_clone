@@ -13,6 +13,7 @@ class UsersController < ApplicationController
 
   def show
     @posts = @user.posts
+    @images = @user.images
   end
 
   def new
