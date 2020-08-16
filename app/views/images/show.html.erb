@@ -7,12 +7,12 @@
 
 <p>
   <strong>Picture:</strong>
-  <%= @image.picture %>
+  <%= image_tag(@image.picture.url, size: "300") %>
 </p>
 
 <p>
   <strong>User:</strong>
-  <%= @image.user %>
+  <%= @image.user.username %>
 </p>
 
 <%= link_to 'Edit', edit_image_path(@image) %> |
