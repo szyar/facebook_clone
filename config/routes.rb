@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :images
   root "sessions#new"
 
   get 'posts', to: 'posts#index'
