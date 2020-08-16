@@ -19,8 +19,10 @@
         <td><%= image_tag(image.picture.url, size: "300") %></td>
         <td><%= image.user.username %></td>
         <td><%= link_to 'Show', image %></td>
+        <% if logged_in? && image.user == current_user %>
         <td><%= link_to 'Edit', edit_image_path(image) %></td>
         <td><%= link_to 'Destroy', image, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
