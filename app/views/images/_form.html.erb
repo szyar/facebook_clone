@@ -12,7 +12,7 @@
 
             <p class="card-text text-center">
               <%= f.text_field :name, autofocus: true,
-              class: "form-control", placeholder: "Caption" %>
+              class: "form-control", placeholder: "What's on your mind? #{current_user.username}" %>
             </p>
 
             <p class="card-text text-left">

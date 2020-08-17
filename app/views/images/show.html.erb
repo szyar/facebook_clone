@@ -12,7 +12,7 @@
           </div>
           <div class="card-body">
             <div class="card-text text-center">Caption: <%= @image.name %></div>
-            <div class="m-4"><%= image_tag(@image.picture.url, size: "300") if @image.picture? %></div>
+            <div class="m-4"><%= image_tag(@image.picture.url, size: "570x300") if @image.picture? %></div>
             <% if logged_in? && @image.user == current_user %>
               <%= link_to 'Edit', edit_image_path(@image), class: "btn btn-outline-primary px-4" %>
               <%= link_to 'Delete', image_path(@image), method: :delete, data: { confirm: "Are you sure?" },
