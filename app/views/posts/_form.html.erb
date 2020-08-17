@@ -1,5 +1,5 @@
 <div class="container">
-  <%= form_with(model: @post, local: true, url: confirm_posts_path) do |f| %>
+  <%= form_with(model: @post, local: true, url: choose_new_or_edit) do |f| %>
     <div class="row justify-content-md-center">
       <div class="col-8 mt-3">
         <%= render 'shared/errors', obj: @post %>

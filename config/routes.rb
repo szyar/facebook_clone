@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
-  resources :images
+  resources :images do
+    collection do
+      post :confirm
+    end
+  end
+
   root "sessions#new"
 
-  get 'posts', to: 'posts#index'
   resources :posts do
     collection do
       post :confirm

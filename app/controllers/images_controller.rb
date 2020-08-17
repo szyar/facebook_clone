@@ -52,6 +52,12 @@ class ImagesController < ApplicationController
     end
   end
 
+  def confirm
+    @image = Image.new(image_params)
+    @image.user = current_user
+    render 'new' if @image.invalid?
+  end
+
   private
 
     def set_image
@@ -59,7 +65,7 @@ class ImagesController < ApplicationController
     end
 
     def image_params
-      params.require(:image).permit(:name, :picture, :user_id)
+      params.require(:image).permit(:name, :picture, :picture_cache, :user_id)
     end
 
     def require_same_user
