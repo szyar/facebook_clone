@@ -9,7 +9,7 @@
           </div>
           <div class="card-body" style="height: 25rem;">
             <%= f.hidden_field :name %>
-            <p>Caption: <%= @image.name %></p>
+            <p><%= @image.name %></p>
             <%= f.hidden_field :picture_cache %>
             <p class="card-text"><%= image_tag(@image.picture.url, size: "570x300") if @image.picture? %></p>
           </div>
