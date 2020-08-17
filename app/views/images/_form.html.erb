@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container mt-5">
   <%= form_with(model: @image, local: true, url: choose_new_or_edit_image) do |f| %>
     <div class="row justify-content-md-center">
       <div class="col-8 mt-3">
@@ -8,10 +8,10 @@
             <p><%= post %></p>
           </div>
 
-          <div class="card-body" style="height: 15rem;">
+          <div class="card-body" style="height: 27rem;">
 
             <p class="card-text text-center">
-              <%= f.text_field :name, autofocus: true,
+              <%= f.text_area :name, rows: "14", autofocus: true,
               class: "form-control", placeholder: "What's on your mind? #{current_user.username}" %>
             </p>
 
